@@ -1,7 +1,18 @@
+@font-face {
+  font-family: "MyRiadPro-Reg";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/MyRiadPro-Reg/MyRiadPro-Reg.eot?#iefix") format("embedded-opentype"), url("../fonts/MyRiadPro-Reg/MyRiadPro-Reg.woff") format("woff"), url("../fonts/MyRiadPro-Reg/MyRiadPro-Reg.ttf") format("truetype"); }
+
+
 $roboto-slab: "Roboto Slab",Arial,sans-serif;
 $roboto: "Roboto",Arial,sans-serif;
+$myriad: "MyRiadPro-Reg",$roboto;
+
 $color-main: #333;
 $color-dark: #1a1a1a;
+$color-focus: #FCCF97;
+$color-error: red;
 
 $how-bg-1: #FCCF97;
 $how-bg-2: #F2A75E;

@@ -37,7 +37,7 @@
 				<p>Заманчиво? Спешите заказать! <br>
 				Доставим бесплатно.</p>
 				<div class="clearfix"></div>
-				<a href="#order" id="toOrder" class="button button-order">Заказать</a>
+				<a href="#form-order" class="button goTo">Заказать</a>
 				<div class="clearfix"></div>
 				<p class="special-text">3 ужина на двоих<br>
 				всего за <span class="old-price">2000&nbsp;Р</span> <span class="new-price">1600&nbsp;Р</span></p>
@@ -80,6 +80,19 @@
 		<div class="secion-header">
 			<h2>Меню на 3 ужина</h2>
 		</div>
+		<div class="container">
+			<div id="slider" class="slider-wrap">
+				<div class="slider-container">
+					<ul class="slider-list">
+						<li></li>
+					</ul>
+				</div>
+				<div class="slider-controls">
+					<a href="#" class="slider-button slider-next">Next</a>
+					<a href="#" class="slider-button slider-prev">Prev</a>
+				</div>
+			</div>
+		</div>
 
 	</section>
 	
@@ -87,14 +100,14 @@
 		<div class="section-header">
 			<h2>Не прощелкайте ;)</h2>
 		</div>
-		<form action="#" class="order-form">
-			<div class="form-header">Закажите 3 ужина <br>на двоих за <div class="new-price">1600 Р</div></div>
-			<p class="form-info">Только на первый заказ</p>
-			<input type="text" name="f_Name" class="f_Name">
-			<input type="text" name="f_Phone" class="f_Phone">
-			<input type="text" name="f_Email" class="f_Email">
-			<input type="submit" name="f_Submit" class="f_Submit button button-order" value="Заказать">
-			<p class="form-info">Успейте заказать до полуночи пятницы, чтобы получить коробку <br>в воскресенье,  25 сентября.  Доставка бесплатно!</p>
+		<form action="#" id="form-order" class="form-order">
+			<div class="form-header">Закажите 3 ужина <br>на двоих за <span class="new-price">1600&nbsp;Р</span></div>
+			<p class="form-info center">Только на первый заказ</p>
+			<input type="text" name="f_Name" class="f_Text f_Name" placeholder="Ваше имя">
+			<input type="text" name="f_Phone" class="f_Text f_Phone" placeholder="Ваш телефон">
+			<input type="text" name="f_Email" class="f_Text f_Email" placeholder="Ваш e-mail">
+			<input type="submit" name="f_Submit" class="f_Submit button" value="Заказать">
+			<p class="form-info">Успейте заказать до полуночи пятницы, чтобы получить коробку в воскресенье,  25 сентября.  Доставка бесплатно!</p>
 		</form>
 		<div class="footer-bottom">
 			<a href="#modalTerm" class="modal">Условия обслуживания</a>

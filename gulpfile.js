@@ -118,8 +118,8 @@ gulp.task('delete', function() {
 	    var buildCss = gulp.src('server/css/*.css')
 	    .pipe(gulp.dest('dist/css'));
 
-	    // var buildFonts = gulp.src('app/fonts/**/*') 
-	    // .pipe(gulp.dest('dist/fonts'));
+	    var buildFonts = gulp.src('app/fonts/**/*') 
+	    .pipe(gulp.dest('dist/fonts'));
 
 	    var buildJs = gulp.src('server/js/**/*') 
 	    .pipe(gulp.dest('dist/js'));
