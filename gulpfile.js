@@ -86,6 +86,12 @@ gulp.task('img', function() {
 				})))
 				.pipe(gulp.dest('dist/img')); 
 });
+gulp.task('img-server', function() {
+
+	return gulp.src('app/img/**/*') 
+				.pipe(gulp.dest('server/img')); 
+});
+
 
 // watch
 gulp.task('watch', function(){
@@ -100,7 +106,7 @@ gulp.task('delete', function() {
 });
 
 	// default
-	gulp.task('default', ['connect', 'html', 'sass', 'scripts', 'js', 'watch']);
+	gulp.task('default', ['connect', 'img-server','html', 'sass', 'scripts', 'js', 'watch']);
 
 	// clear cache
 	gulp.task('clear', function () {

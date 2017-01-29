@@ -1,0 +1,77 @@
+.header{
+	// background: url('../img/bg-top.png') 0 0 no-repeat;
+	background: #fff;
+	padding-top: 64px;
+	margin-bottom: 105px;
+}
+.header h1{
+	padding-left: 122px;
+	margin-bottom: 8px;
+	& span{
+		font-size: 48px;
+		font-size: 3rem;
+		color: #4D4D4D;
+		font-weight: 400;
+		display: inline-block;
+    width: 100%;
+    padding-left: 318px;
+	}
+}
+.header-left{
+	display: inline-block;
+	float: left;
+	max-width: 705px;
+}
+.header-right{
+	display: inline-block;
+	float: left;
+	max-width: 420px;
+	margin-left: 52px;
+	margin-top: 39px;
+	& p{
+		font-size: 16px;
+		font-size: 1rem;
+		line-height: 22px;
+		line-height: 1.325rem;
+		max-width: 310px;
+		margin-top: 0;
+		margin-bottom: 9px;
+	}
+	& .button-order{
+		position: relative;
+		margin-bottom: 27px;
+		&:after{
+			content: '';
+			display: inline-block;
+			width: 102px;
+			height: 109px;
+			position: absolute;
+			top: 34px;
+			right: -132px;
+			background: url('../img/order-arrow.png') 0 0 no-repeat;
+		}
+	}
+	& .special-text{
+		font-size: 35px;
+		font-size: 2.1875rem;
+		line-height: 43px;
+		line-height: 2.7rem;
+		color: $color-dark;
+		font-weight: 500;
+		max-width: 100%;
+		margin-bottom: 36px;
+	}
+	& .old-price{
+		font-size: 32px;
+		font-size: 2rem;
+		color: #999;
+		padding-left: 8px;
+	}
+	& .special-info{
+		font-size: 14px;
+		font-size: 0.875rem;
+		line-height: 14px;
+		line-height: 0.875rem;
+		color: #808080;
+	}
+}
