@@ -1,0 +1,25 @@
+*{
+	box-sizing: border-box;
+	outline: none;
+}
+img{
+	max-width: 100%;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+
+body{
+	font-size: 16px;
+	line-height: 1rem;
+}

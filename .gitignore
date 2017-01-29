@@ -1,0 +1,6 @@
+node_modules
+dist
+server
+/app/bower
+starmedia.sublime-project
+starmedia.sublime-workspace
