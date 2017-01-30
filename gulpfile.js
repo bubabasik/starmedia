@@ -127,7 +127,11 @@ gulp.task('delete', function() {
 	    var buildHtml = gulp.src('server/*.html') 
 	    .pipe(gulp.dest('dist'));
 
-	    var buildHtml = gulp.src('server/*.ico') 
+	    var buildPhp = gulp.src('server/*.php') 
+	    .pipe(gulp.dest('dist'));
+
+
+	    var buildIco = gulp.src('server/*.ico') 
 	    .pipe(gulp.dest('dist'));
 
 

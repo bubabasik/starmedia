@@ -69,10 +69,57 @@ $(document).ready(function(){
 
 	slider.init();
 
+	// validate inputs
+	$('input[type="text"]').unbind().blur( function(){
+		var
+			rule = $(this).attr('data-rule'),
+			val = $(this).val();
+		switch(rule){
+
+			case 'name':
+				var rv_name = /^[a-zA-Zа-яА-Я]+$/;
+
+				if(val.length > 2 && val != '' && rv_name.test(val)){
+					$(this).removeClass('f_Error');
+				}else{
+					$(this).addClass('f_Error');
+				}
+				break;
+
+			case 'email':
+				var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+				if(val != '' && rv_email.test(val)){
+					$(this).removeClass('f_Error');
+				}else{
+					$(this).addClass('f_Error');
+				}
+				break;
+
+			case 'phone':
+				var rv_phone = /^([0-9+()-])+$/;
+				if(val.length > 6 && val != '' && rv_phone.test(val)){
+					$(this).removeClass('f_Error');
+				}else{
+					$(this).addClass('f_Error');
+				}
+				break;
+		}
+	});
+
 	$('#form-order').submit(function(e){
 		e.preventDefault();
-		
-	})
-	
+		if($(this).find('.f_Error').length == 0){
+			var form_data = $(this).serialize();
+			$.ajax({
+ 				type: "POST", //Метод отправки
+				url: "./send.php", //путь до php фаила отправителя
+				data: form_data,
+				success: function() {
+					
+				}
+			});
+		}
+	});
+
 });
 

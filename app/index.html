@@ -16,7 +16,6 @@
 	<link rel="stylesheet" href="./css/libs.min.css">
 	<link rel="stylesheet" href="./css/style.min.css">
 	
-	<script src="./js/modernizr.js"></script>
 	
 	<!--[if lt IE 9]>
 		<script src="./js/ie.min.js"></script>
@@ -113,13 +112,14 @@
 		<div class="section-header">
 			<h2>Не прощелкайте ;)</h2>
 		</div>
-		<form action="#" id="form-order" class="form-order">
+		<form action="#" method="post" id="form-order" class="form-order">
 			<div class="form-header">Закажите 3 ужина <br>на двоих за <span class="new-price">1600&nbsp;Р</span></div>
 			<p class="form-info center">Только на первый заказ</p>
-			<input type="text" name="f_Name" class="f_Text f_Name" placeholder="Ваше имя">
-			<input type="text" name="f_Phone" class="f_Text f_Phone" placeholder="Ваш телефон">
-			<input type="text" name="f_Email" class="f_Text f_Email" placeholder="Ваш e-mail">
+			<input type="text" name="f_Name" class="f_Text f_Name" data-rule="name" autocomplete="off" placeholder="Ваше имя">
+			<input type="text" name="f_Phone" class="f_Text f_Phone"  data-rule="phone" autocomplete="off" placeholder="Ваш телефон">
+			<input type="text" name="f_Email" class="f_Text f_Email"  data-rule="email" autocomplete="off" placeholder="Ваш e-mail">
 			<input type="submit" name="f_Submit" class="f_Submit button" value="Заказать">
+			<div class="form-answer"></div>
 			<p class="form-info">Успейте заказать до полуночи пятницы, чтобы получить коробку в воскресенье,  25 сентября.  Доставка бесплатно!</p>
 		</form>
 		<div class="footer-bottom">
