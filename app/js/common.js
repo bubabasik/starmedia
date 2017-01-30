@@ -58,6 +58,44 @@ var slider = (function(){
 }());
 // # SLIDER
 
+// VALIDATE FORM
+$.valid = function(el){
+		var
+			rule = el.attr('data-rule'),
+			val = el.val();
+		switch(rule){
+
+			case 'name':
+				var rv_name = /^[a-zA-Zа-яА-Я]+$/;
+
+				if(val.length > 2 && val != '' && rv_name.test(val)){
+					el.removeClass('f_Error');
+				}else{
+					el.addClass('f_Error');
+				}
+				break;
+
+			case 'email':
+				var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+				if(val != '' && rv_email.test(val)){
+					el.removeClass('f_Error');
+				}else{
+					el.addClass('f_Error');
+				}
+				break;
+
+			case 'phone':
+				var rv_phone = /^([0-9+()-])+$/;
+				if(val.length > 6 && val != '' && rv_phone.test(val)){
+					el.removeClass('f_Error');
+				}else{
+					el.addClass('f_Error');
+				}
+				break;
+		}
+	};
+// # VALIDATE FORM
+
 $(document).ready(function(){
 	
 	// scroll to ancor
@@ -69,53 +107,47 @@ $(document).ready(function(){
 
 	slider.init();
 
+	$('.modal').click(function(e){
+		e.preventDefault();
+		var href = $(this).attr('href');
+		$('#overlay').fadeIn(400,
+			function(){ 
+				$(href) 
+				.css('display', 'block')
+				.animate({opacity: 1, top: '20%'}, 200);
+			});
+	});
+	$('.modal-close, #overlay').click( function(){
+		$('.modal-cont')
+		.animate({opacity: 0, top: '15%'}, 200, 
+			function(){
+				$(this).css('display', 'none'); 
+				$('#overlay').fadeOut(400); 
+			}
+		);
+	});
+
 	// validate inputs
 	$('input[type="text"]').unbind().blur( function(){
-		var
-			rule = $(this).attr('data-rule'),
-			val = $(this).val();
-		switch(rule){
-
-			case 'name':
-				var rv_name = /^[a-zA-Zа-яА-Я]+$/;
-
-				if(val.length > 2 && val != '' && rv_name.test(val)){
-					$(this).removeClass('f_Error');
-				}else{
-					$(this).addClass('f_Error');
-				}
-				break;
-
-			case 'email':
-				var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
-				if(val != '' && rv_email.test(val)){
-					$(this).removeClass('f_Error');
-				}else{
-					$(this).addClass('f_Error');
-				}
-				break;
-
-			case 'phone':
-				var rv_phone = /^([0-9+()-])+$/;
-				if(val.length > 6 && val != '' && rv_phone.test(val)){
-					$(this).removeClass('f_Error');
-				}else{
-					$(this).addClass('f_Error');
-				}
-				break;
-		}
+		$.valid($(this));
 	});
 
 	$('#form-order').submit(function(e){
 		e.preventDefault();
+		$.valid($(this).find('.f_Text'));
 		if($(this).find('.f_Error').length == 0){
 			var form_data = $(this).serialize();
 			$.ajax({
- 				type: "POST", //Метод отправки
+				type: "POST", //Метод отправки
 				url: "./send.php", //путь до php фаила отправителя
 				data: form_data,
 				success: function() {
-					
+					$('#overlay').fadeIn(400,
+						function(){ 
+							$('#modal-thank') 
+							.css('display', 'block')
+							.animate({opacity: 1, top: '20%'}, 200);
+						});
 				}
 			});
 		}

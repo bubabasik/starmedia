@@ -124,10 +124,10 @@ gulp.task('delete', function() {
 	    var buildJs = gulp.src('server/js/**/*') 
 	    .pipe(gulp.dest('dist/js'));
 
-	    var buildHtml = gulp.src('server/*.html') 
+	    var buildHtml = gulp.src('app/*.html') 
 	    .pipe(gulp.dest('dist'));
 
-	    var buildPhp = gulp.src('server/*.php') 
+	    var buildPhp = gulp.src('app/*.php') 
 	    .pipe(gulp.dest('dist'));
 
 

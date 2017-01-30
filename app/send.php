@@ -1,7 +1,7 @@
 <?php
 	$name = $_POST['f_Name'];
 	$email = $_POST['f_Email'];
-	$phone = $_POST['f_Phone']
+	$phone = $_POST['f_Phone'];
 
 	$name = htmlspecialchars($name);
 	$email = htmlspecialchars($email);
@@ -14,8 +14,8 @@
 	$phone = trim($phone);
 
 	$order_email_message = '<strong>Имя:</strong> '.$name;
-	$order_email_message .= '<strong>Телефон:</strong> '.$phone;
-	$order_email_message .= '<strong>E-mail:</strong> '.$email;
+	$order_email_message .= '<br><strong>Телефон:</strong> '.$phone;
+	$order_email_message .= '<br><strong>E-mail:</strong> '.$email;
 
 	$to= "StarMedia.by <".$email.">";
 	$subject = 'Новая заявка StarMedia.by!';
