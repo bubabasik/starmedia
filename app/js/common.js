@@ -7,12 +7,14 @@ var slider = (function(){
 				
 			var
 				slider = $('#slider'),
-				width = slider.find('.slider-container').outerWidth(),
+				cont = slider.find('.slider-container'),
+				width = cont.outerWidth(),
 				list = slider.find('.slider-list'),
 				items = list.find('li'),
-				speed = 500;
+				speed = 500,
+				reqPos = 0;
 
-
+			cont.append('<div class="slider-controls"><a href="#" class="slider-button slider-next">Next</a><a href="#" class="slider-button slider-prev">Prev</a></div>')
 			items.addClass('slider-item');
 			items.first().clone().prependTo(list).addClass('slider-item no-slide');
 			items.last().clone().appendTo(list).addClass('slider-item no-slide');
@@ -22,6 +24,9 @@ var slider = (function(){
 			
 			$('.slider-item').css('width',width);
 			$(window).resize(function(){
+				width = cont.outerWidth();
+				reqPos = items.filter('.active').index()  * width;
+				list.css('margin-left','-' + reqPos + 'px');
 				$('.slider-item').css('width',width);
 			})
 
@@ -63,6 +68,11 @@ $(document).ready(function(){
 	});
 
 	slider.init();
+
+	$('#form-order').submit(function(e){
+		e.preventDefault();
+		
+	})
 	
 });
 

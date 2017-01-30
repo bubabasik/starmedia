@@ -1,5 +1,6 @@
 .how-section{
-	margin-bottom: 43px;
+	margin-bottom: 80px;
+	& .section-header h2{padding-left: 20px;}
 }
 .how-cont{
 	text-align: center;
@@ -75,8 +76,18 @@
 }
 
 @media only screen and (max-width : 1280px) {
+	.how-item,
+	.how-text{
+		width: 225px;
+	}
+}
+@media only screen and (max-width : 992px) {
 	.how-cont-line{
 		width: 100%;
+	}
+	.how-item,
+	.how-text{
+		width: 290px;
 	}
 }
 @media only screen and (max-width : 762px) {

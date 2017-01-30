@@ -1,7 +1,9 @@
 .footer{
 	padding-bottom: 70px;
+	background: url('../img/bg-top.png') center 0 no-repeat,url('../img/bg-bottom.png') center 100% no-repeat;
 	& .section-header{
 		margin-bottom: 57px;
+		margin-top: -30px;
 	}
 }
 .form-order{
@@ -88,5 +90,16 @@
 		&:hover{
 			border-bottom: 1px solid transparent;
 		}
+	}
+}
+@media only screen and (min-width : 1583px) {
+	.footer{
+		background-size: cover,cover;
+		background-position: -1500px 0, -700px 100%;
+	}
+}
+@media only screen and (min-width : 3000px) {
+	.footer{
+		background-position: -1500px 0, 1000px 100%;
 	}
 }
