@@ -68,8 +68,7 @@ gulp.task('scripts', function() {
 	.pipe(gulp.dest('server/js'));
   return gulp.src([ 
 	        'app/bower/jquery/jquery.min.js', 
-	        'app/bower/jquery-ui-slider/jquery-ui.min.js',
-	        'app/bower/jquery.ui.touch-punch/dist/jquery.ui.touch-punch.min.js' 
+	        'app/bower/placeholders/dist/placeholders.min.js' 
         ])
         .pipe(gulp.dest('server/js'));
 });
